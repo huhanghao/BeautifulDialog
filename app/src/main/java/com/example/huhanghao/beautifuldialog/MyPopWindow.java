@@ -3,6 +3,7 @@ package com.example.huhanghao.beautifuldialog;
 import android.app.Activity;
 import android.graphics.PixelFormat;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import static android.support.v4.view.ViewCompat.isAttachedToWindow;
@@ -18,6 +19,7 @@ public class MyPopWindow {
     private final WindowManager mWindowManager;
     private final WindowManager.LayoutParams params;
     private View contentView;
+    private final Window window;
 
     public MyPopWindow(Activity context, int bg, int animatorModel) {
 
@@ -28,6 +30,7 @@ public class MyPopWindow {
         //获取WindowManager
 //        mWindowManager=(WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         mWindowManager = context.getWindowManager();
+        window = context.getWindow();
         params = new WindowManager.LayoutParams();
         params.format = PixelFormat.RGBA_8888;
 
@@ -47,6 +50,8 @@ public class MyPopWindow {
         if (mWindowManager == null) return;
         // 当View已经被加到Window上去了，那么就不能再加
         if (isAttachedToWindow(contentView) || contentView.getParent() != null) return;
-        mWindowManager.addView(contentView, params);
+//        mWindowManager.addView(contentView, params);
+
+        window.addContentView(contentView, params);
     }
 }

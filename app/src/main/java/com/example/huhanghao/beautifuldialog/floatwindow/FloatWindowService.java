@@ -33,7 +33,7 @@ public class FloatWindowService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 
-		context = this;
+		context = getApplicationContext();
 		layoutResId = intent.getIntExtra(LAYOUT_RES_ID, 0);
 		rootLayoutId = intent.getIntExtra(ROOT_LAYOUT_ID, 0);
 
