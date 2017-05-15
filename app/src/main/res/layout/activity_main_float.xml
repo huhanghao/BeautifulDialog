@@ -27,6 +27,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="showMy"
-        android:text="打开我的" />
+        android:text="打开我的pop" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showShadow"
+        android:text="打开蒙层" />
 
 </LinearLayout>

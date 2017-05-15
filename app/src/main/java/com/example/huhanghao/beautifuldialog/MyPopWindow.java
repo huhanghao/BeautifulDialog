@@ -50,8 +50,7 @@ public class MyPopWindow {
         if (mWindowManager == null) return;
         // 当View已经被加到Window上去了，那么就不能再加
         if (isAttachedToWindow(contentView) || contentView.getParent() != null) return;
-//        mWindowManager.addView(contentView, params);
-
-        window.addContentView(contentView, params);
+        mWindowManager.addView(contentView, params);
+//        window.addContentView(contentView, params);
     }
 }
